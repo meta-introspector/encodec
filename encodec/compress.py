@@ -11,7 +11,7 @@ import math
 import struct
 import time
 import typing as tp
-
+import pprint
 import torch
 
 from . import binary
@@ -57,36 +57,42 @@ def compress_to_file(model: EncodecModel, wav: torch.Tensor, fo: tp.IO[bytes],
         'lm': use_lm,                    # use lm?
     }
     binary.write_ecdc_header(fo, metadata)
-
+    pprint.pprint(metadata)
     for (frame, scale) in frames:
         if scale is not None:
             fo.write(struct.pack('!f', scale.cpu().item()))
+            pprint.pprint(scale)
         _, K, T = frame.shape
-        if use_lm:
-            coder = ArithmeticCoder(fo)
-            states: tp.Any = None
-            offset = 0
-            input_ = torch.zeros(1, K, 1, dtype=torch.long, device=wav.device)
-        else:
-            packer = binary.BitPacker(model.bits_per_codebook, fo)
+        #if use_lm:
+        coder = ArithmeticCoder(fo)
+        states: tp.Any = None
+        offset = 0
+        input_ = torch.zeros(1, K, 1, dtype=torch.long, device=wav.device)
+        
+        #else:
+        #    packer = binary.BitPacker(model.bits_per_codebook, fo)
         for t in range(T):
-            if use_lm:
-                with torch.no_grad():
-                    probas, states, offset = lm(input_, states, offset)
+            #if use_lm:
+            with torch.no_grad():
+                pprint.pprint(input_)
+                pprint.pprint(states)
+                pprint.pprint(offset)
+                #probas, states, offset = lm(input_, states, offset)
                 # We emulate a streaming scenario even though we do not provide an API for it.
                 # This gives us a more accurate benchmark.
                 input_ = 1 + frame[:, :, t: t + 1]
             for k, value in enumerate(frame[0, :, t].tolist()):
-                if use_lm:
-                    q_cdf = build_stable_quantized_cdf(
-                        probas[0, :, k, 0], coder.total_range_bits, check=False)
-                    coder.push(value, q_cdf)
-                else:
-                    packer.push(value)
-        if use_lm:
-            coder.flush()
-        else:
-            packer.flush()
+                #if use_lm:
+                    #q_cdf = build_stable_quantized_cdf(
+                    #    probas[0, :, k, 0], coder.total_range_bits, check=False)
+                    pprint.pprint([k, value])
+                    #coder.push(value, q_cdf)
+                #else:
+                #    packer.push(value)
+        #if use_lm:
+        #    coder.flush()
+        #else:
+        #    packer.flush()
 
 
 def decompress_from_file(fo: tp.IO[bytes], device='cpu') -> tp.Tuple[torch.Tensor, int]:

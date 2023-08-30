@@ -7,6 +7,7 @@
 """Command-line for audio compression."""
 
 import argparse
+import pprint
 from pathlib import Path
 import sys
 
@@ -78,6 +79,7 @@ def check_clipping(wav, args):
 
 
 def main():
+    print("Hello")
     args = get_parser().parse_args()
     if not args.input.exists():
         fatal(f"Input file {args.input} does not exist.")
@@ -90,6 +92,8 @@ def main():
             fatal("Output extension must be .wav")
         check_output_exists(args)
         out, out_sample_rate = decompress(args.input.read_bytes())
+        pprint.pprint(out)
+        pprint.pprint(out_sample_rate)
         check_clipping(out, args)
         save_audio(out, args.output, out_sample_rate, rescale=args.rescale)
     else:
@@ -109,6 +113,9 @@ def main():
         wav, sr = torchaudio.load(args.input)
         wav = convert_audio(wav, sr, model.sample_rate, model.channels)
         compressed = compress(model, wav, use_lm=args.lm)
+        #pprint.pprint(model)
+        #pprint.pprint(wav)
+
         if args.output.suffix.lower() == SUFFIX:
             args.output.write_bytes(compressed)
         else:

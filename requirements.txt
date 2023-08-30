@@ -34,3 +34,5 @@ torch==2.0.1
 torchaudio==2.0.2
 triton==2.0.0
 typing_extensions==4.7.1
+-egit+https://github.com/huggingface/transformers.git@main#egg=transformers
+datasets
