@@ -26,6 +26,7 @@ def get_2d_padding(kernel_size: tp.Tuple[int, int], dilation: tp.Tuple[int, int]
 
 
 class DiscriminatorSTFT(nn.Module):
+
     """STFT sub-discriminator.
     Args:
         filters (int): Number of filters in convolutions

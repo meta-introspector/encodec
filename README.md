@@ -1,3 +1,13 @@
+# Hack of 
+
+```
+virtualenv .venv
+pip install -r requirements.txt
+python3 ./setup.py  install
+make
+
+``
+
 # EnCodec: High Fidelity Neural Audio Compression
 ![linter badge](https://github.com/facebookresearch/encodec/workflows/linter/badge.svg)
 ![tests badge](https://github.com/facebookresearch/encodec/workflows/tests/badge.svg)
