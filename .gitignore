@@ -49,3 +49,7 @@ ENV/
 
 /test_*.ecdc
 /test_*_decompressed.wav
+/samples/J.S. Bach - Crab Canon on a Möbius Strip-xUHQ2ybTejU.ecdc
+/samples/J.S. Bach - Crab Canon on a Möbius Strip-xUHQ2ybTejU.mp4
+/samples/J.S. Bach - Crab Canon on a Möbius Strip-xUHQ2ybTejU.wav
+*~
