@@ -1,12 +1,41 @@
-# Hack of 
+# Hack of  encodec
 
+First you want to install our emojiintrospector tool from here 
+```
+git clone https://github.com/meta-introspector/https-lablab.ai-event-audiocraft-24-hours-hackathon/ emoji-tool
+cd emoji-tool
+pip install -e . 
+```
+
+Install this tool:
 ```
 virtualenv .venv
 pip install -r requirements.txt
 python3 ./setup.py  install
 make
 
-``
+```
+
+# produce permutations of 3 harmonics
+
+```
+python3 ./generate3.py
+bash ./runagain2.sh
+
+cat samples/3harmonics_*.emoj |sort |uniq -c | sort -n > proof.txt
+
+```
+
+The rungain uses this repo ecode to produce the text,
+`   python -m  encodec $x --force > $x.txt   `
+
+Then it uses the other emoji tool 
+`   emojintrospector read --input $x.txt > $x.emoj`
+
+and finally produces a report:
+ `  cat $x.emoj|sort |uniq -c |sort -n > $x.report`
+
+
 
 # EnCodec: High Fidelity Neural Audio Compression
 ![linter badge](https://github.com/facebookresearch/encodec/workflows/linter/badge.svg)
