@@ -1,4 +1,76 @@
 music:
+# https://s9.imslp.org/files/imglnks/usimg/0/0e/IMSLP428837-PMLP533917-PBF_Prelude_and_Fugue_in_C_major,_BWV_846.mp3
   - composer: Bach
     name: Crab Cannon
     yt: https://www.youtube.com/watch?v=xUHQ2ybTejU
+
+  - composer: Bach
+    name: Prelude and Fugue No. 1 in C major, BWV 846
+    performer: Martha Goldstein
+    instrument: harpsichord
+    source: Pandora Records/Al Goldstein Archive
+    license: EFF Open Audio License
+    notes: Recorded on a French double by Jacques Germain, Paris ca. 1750 with original registers 8', 4'
+    file: https://s9.imslp.org/files/imglnks/usimg/8/82/IMSLP305905-SIBLEY1802.04812.063c-39087010561343bwv0846-01.mp3
+
+  - composer: Bach 
+    name: Prelude and Fugue No. 1 in C major, BWV 846
+    performer: Martha Goldstein
+    instrument: harpsichord
+    source: Pandora Records/Al Goldstein Archive  
+    license: EFF Open Audio License
+    notes: Recorded on a French double by Jacques Germain, Paris ca. 1750 with original registers 8', 4'
+    file: https://s9.imslp.org/files/imglnks/usimg/5/5d/IMSLP305906-SIBLEY1802.04812.63aa-39087010594783bwv0846-02.mp3
+
+  - composer: Bach
+    name: Prelude and Fugue No. 1 in C major, BWV 846 
+    performer: Kimiko Ishizaka
+    instrument: piano
+    source: Navona Records
+    license: Creative Commons Attribution 4.0
+    notes: From Kimiko Ishizaka's Open Well-Tempered Clavier. Master tracks available here. Lossless files are 96 kHz/24-bit, compressed with flac. Lossy files have been converted with LAME, MP3 VBR V0.
+    file: https://s9.imslp.org/files/imglnks/usimg/8/87/IMSLP428837-PMLP137937-Bach_-_Das_wohltemperirte_Klavier_I__BWV_846__Kimiko_Ishizaka__piano_.mp3
+
+  - composer: Bach
+    name: Prelude and Fugue No. 1 in C major, BWV 846
+    performer: Peter Bradley-Fulgoni
+    instrument: piano
+    source: Peter Bradley-Fulgoni  
+    license: Creative Commons Attribution-NonCommercial-NoDerivs 4.0
+    notes: Recorded June 2016 in St. Paul's Hall, Huddersfield University (Peter Hill, sound engineer)  
+    file: https://imslp.simssa.ca/files/imglnks/usimg/b/bb/IMSLP717183-PMLP569815-Bach_-_BWV_846_-_Bradley-Fulgoni.mp3
+
+  # Individual Movements
+
+  - composer: Bach
+    name: Prelude in C major, BWV 846
+    performer: Glenn Gould
+    instrument: piano 
+    source: Columbia Masterworks, 1963
+    license: Public Domain - Non-PD US
+    notes: Source Internet Archive
+    file: https://imslp.simssa.ca/files/imglnks/usimg/b/bf/IMSLP186125-Bach_-_BWV_846_-_Glenn_Gould_-_Praeludium.mp3
+
+  - composer: Bach
+    name: Prelude in C major, BWV 846
+    performer: Paulo Elpidio A. Sampaio
+    instrument: piano
+    source: Paulo Elpidio A. Sampaio  
+    license: Creative Commons Attribution 3.0
+    file: https://imslp.simssa.ca/files/imglnks/usimg/3/3f/IMSLP590497-PMLP569815-Bach_-_BWV_846_-_Praeludium_-_Wong.mp3
+
+  - composer: Bach
+    name: Prelude in C major, BWV 846
+    performer: Ken Wong
+    instrument: piano
+    source: Ken Wong
+    license: Creative Commons Attribution 4.0
+    file: https://imslp.simssa.ca/files/imglnks/usimg/1/14/IMSLP849312-PMLP569815-Bach_-_BWV_846_-_Praeludium_-_Pfeifer.mp3
+
+  - composer: Bach 
+    name: Fugue in C major, BWV 846 
+    performer: Victor Eijkhout
+    instrument: recorders
+    source: Victor Eijkhout
+    license: Creative Commons Attribution 4.0
+    file: https://imslp.simssa.ca/files/imglnks/usimg/5/5f/IMSLP338795-Bach_-_BWV_846_-_Fugue_-_Eijkhout.mp3
