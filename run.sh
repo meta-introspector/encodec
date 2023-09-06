@@ -1,0 +1,4 @@
+
+echo running $1
+
+
